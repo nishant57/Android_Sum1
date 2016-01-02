@@ -9,6 +9,9 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class SumTwoNumbers extends AppCompatActivity {
+    static int toggle =0;
+
+    //public TextView ans = (TextView)findViewById(R.id.ans);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,21 @@ public class SumTwoNumbers extends AppCompatActivity {
     }
 
     public void onGoButtonClick(View v){
+        TextView test = (TextView)findViewById(R.id.textView_test);
+        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
+        TextView num1 = (TextView)findViewById(R.id.textView_num1);
+        TextView num2 = (TextView)findViewById(R.id.textView_num2);
+        TextView ans = (TextView)findViewById(R.id.ans);
+        //toggle = toggle + 1;
+        //test.setText(Integer.toString(toggle));
+        if (ans.getText().toString().length() < 1 && user_ans.getText().toString().length() > 0
+                && num1.getText().toString().length() > 0 && num2.getText().toString().length() > 0){
+            onCheckButtonClick(v);
+        }
+        else {
+            onNextButtonClick(v);
+        }
+
 
     }
 }
