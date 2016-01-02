@@ -16,7 +16,7 @@ public class SumTwoNumbers extends AppCompatActivity {
         setContentView(R.layout.activity_sum_two_numbers);
     }
 
-    public void onAddButtonClick(View v){
+    public void onCheckButtonClick(View v){
         EditText num1 = (EditText)findViewById(R.id.editText_num1);
         EditText num2 = (EditText)findViewById(R.id.editText_num2);
         EditText user_ans = (EditText)findViewById(R.id.editText_userAns);
@@ -25,12 +25,28 @@ public class SumTwoNumbers extends AppCompatActivity {
         int number2 = Integer.parseInt(num2.getText().toString());
         int userAnswer = Integer.parseInt(user_ans.getText().toString());
         int sum = number1 + number2;
-        Random
         if (userAnswer == sum) {
             ans.setText("Correct");
         }
         else {
             ans.setText("Incorrect");
         }
+    }
+
+    public void onNextButtonClick(View v){
+        // Generating random numbers below
+        Random rand1 = new Random();
+        Random rand2 = new Random();
+        int number1  = rand1.nextInt(10)+1;
+        int number2 = rand2.nextInt(10)+1;
+        //---
+        EditText num1 = (EditText)findViewById(R.id.editText_num1);
+        EditText num2 = (EditText)findViewById(R.id.editText_num2);
+        EditText user_ans = (EditText)findViewById(R.id.editText_userAns);
+        TextView ans = (TextView)findViewById(R.id.ans);
+        num1.setText(Integer.toString(number1));
+        num2.setText(Integer.toString(number2));
+        user_ans.setText("");
+        ans.setText("");
     }
 }
