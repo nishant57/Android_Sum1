@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class SumTwoNumbers extends AppCompatActivity {
 
     @Override
@@ -23,6 +25,7 @@ public class SumTwoNumbers extends AppCompatActivity {
         int number2 = Integer.parseInt(num2.getText().toString());
         int userAnswer = Integer.parseInt(user_ans.getText().toString());
         int sum = number1 + number2;
+        Random
         if (userAnswer == sum) {
             ans.setText("Correct");
         }
