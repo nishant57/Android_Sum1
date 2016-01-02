@@ -3,7 +3,7 @@ package com.example.nishant.sum_1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -16,10 +16,19 @@ public class SumTwoNumbers extends AppCompatActivity {
         setContentView(R.layout.activity_sum_two_numbers);
     }
 
+    // Numeric pad sends data to the User Ans
+    public void onNumericPadClick(View v){
+        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
+        Button buttonClicked = (Button)v;
+        String buttonStored = buttonClicked.getText().toString();
+        user_ans.append(buttonStored);
+    }
+
+    //Checking if the answer is correct or not
     public void onCheckButtonClick(View v){
         TextView num1 = (TextView)findViewById(R.id.textView_num1);
         TextView num2 = (TextView)findViewById(R.id.textView_num2);
-        EditText user_ans = (EditText)findViewById(R.id.editText_userAns);
+        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
         TextView ans = (TextView)findViewById(R.id.ans);
         int number1 = Integer.parseInt(num1.getText().toString());
         int number2 = Integer.parseInt(num2.getText().toString());
@@ -33,6 +42,7 @@ public class SumTwoNumbers extends AppCompatActivity {
         }
     }
 
+    //setting up for the next iteration
     public void onNextButtonClick(View v){
         // Generating random numbers below
         Random rand1 = new Random();
@@ -42,7 +52,7 @@ public class SumTwoNumbers extends AppCompatActivity {
         //---
         TextView num1 = (TextView)findViewById(R.id.textView_num1);
         TextView num2 = (TextView)findViewById(R.id.textView_num2);
-        EditText user_ans = (EditText)findViewById(R.id.editText_userAns);
+        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
         TextView ans = (TextView)findViewById(R.id.ans);
         num1.setText(Integer.toString(number1));
         num2.setText(Integer.toString(number2));
