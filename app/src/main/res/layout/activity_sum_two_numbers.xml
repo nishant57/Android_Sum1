@@ -199,4 +199,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go"
+        android:id="@+id/button"
+        android:layout_above="@+id/gridLayout"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textView_test"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/textView_num1"
+        android:layout_toStartOf="@+id/textView_num1" />
+
 </RelativeLayout>

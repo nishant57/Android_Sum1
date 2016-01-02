@@ -14,6 +14,7 @@ public class SumTwoNumbers extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sum_two_numbers);
+        int flag = 0;
     }
 
     // Numeric pad sends data to the User Ans
@@ -72,5 +73,9 @@ public class SumTwoNumbers extends AppCompatActivity {
             answer = answer.substring(0, answer.length()-1);
         }
         user_ans.setText(answer);
+    }
+
+    public void onGoButtonClick(View v){
+
     }
 }
