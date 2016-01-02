@@ -12,12 +12,13 @@ public class SumTwoNumbers extends AppCompatActivity {
     static int toggle =0;
 
     //public TextView ans = (TextView)findViewById(R.id.ans);
+    //How can we include the above line and delete the ones in the method.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sum_two_numbers);
-
+        //Initiates with a set of numbers
         Button button_go = (Button)findViewById(R.id.button_go);
         onNextButtonClick(button_go);
     }
@@ -30,7 +31,23 @@ public class SumTwoNumbers extends AppCompatActivity {
         user_ans.append(buttonStored);
     }
 
-    //Checking if the answer is correct or not
+    //Click to clear all in User input
+    public void onCAButtonClick(View v){
+        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
+        user_ans.setText("");
+    }
+
+    //Click to backspace one character in user input
+    public void onDeleteButtonClick(View v){
+        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
+        String answer = user_ans.getText().toString();
+        if (answer.length() > 0) {
+            answer = answer.substring(0, answer.length()-1);
+        }
+        user_ans.setText(answer);
+    }
+
+    //Checking if the answer is correct or not and displays the result
     public void onCheckButtonClick(View v){
         TextView num1 = (TextView)findViewById(R.id.textView_num1);
         TextView num2 = (TextView)findViewById(R.id.textView_num2);
@@ -48,7 +65,7 @@ public class SumTwoNumbers extends AppCompatActivity {
         }
     }
 
-    //setting up for the next iteration
+    //setting up for the next iteration generating random numbers
     public void onNextButtonClick(View v){
         // Generating random numbers below
         Random rand1 = new Random();
@@ -66,20 +83,7 @@ public class SumTwoNumbers extends AppCompatActivity {
         ans.setText("");
     }
 
-    public void onCAButtonClick(View v){
-        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
-        user_ans.setText("");
-    }
-
-    public void onDeleteButtonClick(View v){
-        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
-        String answer = user_ans.getText().toString();
-        if (answer.length() > 0) {
-            answer = answer.substring(0, answer.length()-1);
-        }
-        user_ans.setText(answer);
-    }
-
+    //one button "Go" to both check answers and generate next number
     public void onGoButtonClick(View v){
       //  TextView test = (TextView)findViewById(R.id.textView_test);
         TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
