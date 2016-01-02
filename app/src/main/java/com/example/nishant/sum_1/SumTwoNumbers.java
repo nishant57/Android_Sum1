@@ -17,8 +17,8 @@ public class SumTwoNumbers extends AppCompatActivity {
     }
 
     public void onCheckButtonClick(View v){
-        EditText num1 = (EditText)findViewById(R.id.editText_num1);
-        EditText num2 = (EditText)findViewById(R.id.editText_num2);
+        TextView num1 = (TextView)findViewById(R.id.textView_num1);
+        TextView num2 = (TextView)findViewById(R.id.textView_num2);
         EditText user_ans = (EditText)findViewById(R.id.editText_userAns);
         TextView ans = (TextView)findViewById(R.id.ans);
         int number1 = Integer.parseInt(num1.getText().toString());
@@ -40,8 +40,8 @@ public class SumTwoNumbers extends AppCompatActivity {
         int number1  = rand1.nextInt(10)+1;
         int number2 = rand2.nextInt(10)+1;
         //---
-        EditText num1 = (EditText)findViewById(R.id.editText_num1);
-        EditText num2 = (EditText)findViewById(R.id.editText_num2);
+        TextView num1 = (TextView)findViewById(R.id.textView_num1);
+        TextView num2 = (TextView)findViewById(R.id.textView_num2);
         EditText user_ans = (EditText)findViewById(R.id.editText_userAns);
         TextView ans = (TextView)findViewById(R.id.ans);
         num1.setText(Integer.toString(number1));
