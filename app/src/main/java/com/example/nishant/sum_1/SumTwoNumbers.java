@@ -17,7 +17,9 @@ public class SumTwoNumbers extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sum_two_numbers);
-        int flag = 0;
+
+        Button button_go = (Button)findViewById(R.id.button_go);
+        onNextButtonClick(button_go);
     }
 
     // Numeric pad sends data to the User Ans
@@ -37,7 +39,7 @@ public class SumTwoNumbers extends AppCompatActivity {
         int number1 = Integer.parseInt(num1.getText().toString());
         int number2 = Integer.parseInt(num2.getText().toString());
         int userAnswer = Integer.parseInt(user_ans.getText().toString());
-        int sum = number1 + number2;
+        int sum = number1 * number2;
         if (userAnswer == sum) {
             ans.setText("Correct");
         }
@@ -79,7 +81,7 @@ public class SumTwoNumbers extends AppCompatActivity {
     }
 
     public void onGoButtonClick(View v){
-        TextView test = (TextView)findViewById(R.id.textView_test);
+      //  TextView test = (TextView)findViewById(R.id.textView_test);
         TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
         TextView num1 = (TextView)findViewById(R.id.textView_num1);
         TextView num2 = (TextView)findViewById(R.id.textView_num2);

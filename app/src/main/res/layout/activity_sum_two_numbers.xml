@@ -14,33 +14,14 @@
         android:gravity="center"
         android:layout_below="@+id/textView_num1Label"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check"
-        android:onClick="onCheckButtonClick"
-        android:id="@+id/btn_check"
-        android:layout_alignTop="@+id/textView_userAns"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:id="@+id/btn_next"
-        android:onClick="onNextButtonClick"
-        android:layout_alignTop="@+id/btn_check"
-        android:layout_alignRight="@+id/gridLayout"
-        android:layout_alignEnd="@+id/gridLayout" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="+"
+        android:text="X"
         android:id="@+id/textView_num1Label"
         android:layout_alignTop="@+id/textView_num1"
         android:layout_centerHorizontal="true" />
@@ -51,12 +32,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView_num1"
         android:inputType="number"
-        android:text="12"
         android:layout_marginTop="35dp"
         android:gravity="center"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/btn_check"
-        android:layout_alignEnd="@+id/btn_check" />
+        android:layout_alignLeft="@+id/button_go"
+        android:layout_alignStart="@+id/button_go" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,11 +44,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView_num2"
         android:inputType="number"
-        android:text="12"
         android:gravity="center"
-        android:layout_alignTop="@+id/textView_num1Label"
-        android:layout_alignLeft="@+id/btn_next"
-        android:layout_alignStart="@+id/btn_next" />
+        android:layout_above="@+id/ans"
+        android:layout_alignRight="@+id/button_go"
+        android:layout_alignEnd="@+id/button_go" />
 
     <GridLayout
         android:layout_width="wrap_content"
@@ -190,19 +169,21 @@
     </GridLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView_userAns"
-        android:layout_below="@+id/ans"
+        android:layout_above="@+id/button_go"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp" />
+        android:layout_marginBottom="33dp"
+        android:gravity="center"
+        android:background="#e6e2e2" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go"
-        android:id="@+id/button"
+        android:id="@+id/button_go"
         android:onClick="onGoButtonClick"
         android:layout_above="@+id/gridLayout"
         android:layout_alignLeft="@+id/gridLayout"
