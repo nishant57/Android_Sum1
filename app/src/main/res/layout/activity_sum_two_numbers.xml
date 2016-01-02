@@ -150,7 +150,8 @@
             android:text="CA"
             android:id="@+id/buttonCA"
             android:layout_row="3"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:onClick="onCAButtonClick" />
 
         <Button
             android:layout_width="wrap_content"
@@ -167,7 +168,8 @@
             android:text="Delete"
             android:layout_row="3"
             android:layout_column="2"
-            android:id="@+id/buttonDel" />
+            android:id="@+id/buttonDel"
+            android:onClick="onDeleteButtonClick" />
 
         <Button
             android:layout_width="wrap_content"

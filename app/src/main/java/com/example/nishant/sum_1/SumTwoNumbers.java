@@ -59,4 +59,18 @@ public class SumTwoNumbers extends AppCompatActivity {
         user_ans.setText("");
         ans.setText("");
     }
+
+    public void onCAButtonClick(View v){
+        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
+        user_ans.setText("");
+    }
+
+    public void onDeleteButtonClick(View v){
+        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
+        String answer = user_ans.getText().toString();
+        if (answer.length() > 0) {
+            answer = answer.substring(0, answer.length()-1);
+        }
+        user_ans.setText(answer);
+    }
 }
