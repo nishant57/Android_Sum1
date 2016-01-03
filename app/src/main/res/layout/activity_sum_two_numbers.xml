@@ -177,7 +177,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="33dp"
         android:gravity="center"
-        android:background="#e6e2e2" />
+        android:background="#e6e2e2"
+        android:hint="Enter Answer" />
 
     <Button
         android:layout_width="wrap_content"
@@ -194,11 +195,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ch Activity"
+        android:text="&lt;--"
         android:id="@+id/button_select"
-        android:layout_above="@+id/textView_num1Label"
+        android:onClick="onActivityChangeClick"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="onActivityChangeClick" />
+        android:layout_above="@+id/textView_num1Label"
+        android:layout_alignRight="@+id/textView_num1"
+        android:layout_alignEnd="@+id/textView_num1" />
 
 </RelativeLayout>

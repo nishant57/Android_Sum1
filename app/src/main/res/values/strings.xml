@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sum_1</string>
+    <string name="app_name">Multiplication Tables</string>
 
     <string-array name="thirty">
         <item>1</item>

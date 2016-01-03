@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -25,6 +26,7 @@ public class SumTwoNumbers extends AppCompatActivity {
     }
 
     // Numeric pad sends data to the User Ans
+    //TODO: if the answer has been checked then the numeric keypad shouldn't work.
     public void onNumericPadClick(View v){
         TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
         Button buttonClicked = (Button)v;
@@ -61,9 +63,11 @@ public class SumTwoNumbers extends AppCompatActivity {
         if (userAnswer == product) {
             ans.setText("Correct");
         }
-        else {
-            ans.setText("Incorrect, " + product);
-        }
+        else ans.setText("Incorrect, " + product);
+
+        // Change button label
+        Button go = (Button)findViewById(R.id.button_go);
+        go.setText("Next");
     }
 
     //setting up for the next iteration generating random numbers
@@ -88,6 +92,10 @@ public class SumTwoNumbers extends AppCompatActivity {
         num2.setText(Integer.toString(number2));
         user_ans.setText("");
         ans.setText("");
+
+        // Change button label
+        Button go = (Button)findViewById(R.id.button_go);
+        go.setText("Check");
     }
 
     //one button "Go" to both check answers and generate next number
@@ -97,12 +105,15 @@ public class SumTwoNumbers extends AppCompatActivity {
         TextView num1 = (TextView) findViewById(R.id.textView_num1);
         TextView num2 = (TextView) findViewById(R.id.textView_num2);
         TextView ans = (TextView) findViewById(R.id.ans);
-        //toggle = toggle + 1;
-        //test.setText(Integer.toString(toggle));
-        if (ans.getText().toString().length() < 1 && user_ans.getText().toString().length() > 0
+        if (user_ans.getText().toString().length()<1){
+            Toast empty = Toast.makeText(this, "Please enter an answer", Toast.LENGTH_SHORT);
+            empty.show();
+        }
+        else if (ans.getText().toString().length() < 1 && user_ans.getText().toString().length() > 0
                 && num1.getText().toString().length() > 0 && num2.getText().toString().length() > 0) {
             onCheckButtonClick(v);
-        } else onNextButtonClick(v);
+        }
+        else onNextButtonClick(v);
     }
 
 
