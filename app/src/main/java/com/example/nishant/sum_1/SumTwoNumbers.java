@@ -1,5 +1,6 @@
 package com.example.nishant.sum_1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -56,23 +57,29 @@ public class SumTwoNumbers extends AppCompatActivity {
         int number1 = Integer.parseInt(num1.getText().toString());
         int number2 = Integer.parseInt(num2.getText().toString());
         int userAnswer = Integer.parseInt(user_ans.getText().toString());
-        int sum = number1 * number2;
-        if (userAnswer == sum) {
+        int product = number1 * number2;
+        if (userAnswer == product) {
             ans.setText("Correct");
         }
         else {
-            ans.setText("Incorrect");
+            ans.setText("Incorrect, " + product);
         }
     }
 
     //setting up for the next iteration generating random numbers
     public void onNextButtonClick(View v){
         // Generating random numbers below
+        Bundle userPreference = getIntent().getExtras();
+        int from1 = Integer.parseInt(userPreference.getString("from1"));
+        int from2 = Integer.parseInt(userPreference.getString("from2"));
+        int to1 = Integer.parseInt(userPreference.getString("to1"));
+        int to2 = Integer.parseInt(userPreference.getString("to2"));
         Random rand1 = new Random();
         Random rand2 = new Random();
-        int number1  = rand1.nextInt(10)+1;
-        int number2 = rand2.nextInt(10)+1;
+        int number1  = rand1.nextInt(to1-from1+1)+from1;
+        int number2 = rand1.nextInt(to2-from2+1)+from2;
         //---
+
         TextView num1 = (TextView)findViewById(R.id.textView_num1);
         TextView num2 = (TextView)findViewById(R.id.textView_num2);
         TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
@@ -84,22 +91,23 @@ public class SumTwoNumbers extends AppCompatActivity {
     }
 
     //one button "Go" to both check answers and generate next number
-    public void onGoButtonClick(View v){
-      //  TextView test = (TextView)findViewById(R.id.textView_test);
-        TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
-        TextView num1 = (TextView)findViewById(R.id.textView_num1);
-        TextView num2 = (TextView)findViewById(R.id.textView_num2);
-        TextView ans = (TextView)findViewById(R.id.ans);
+    public void onGoButtonClick(View v) {
+        //  TextView test = (TextView)findViewById(R.id.textView_test);
+        TextView user_ans = (TextView) findViewById(R.id.textView_userAns);
+        TextView num1 = (TextView) findViewById(R.id.textView_num1);
+        TextView num2 = (TextView) findViewById(R.id.textView_num2);
+        TextView ans = (TextView) findViewById(R.id.ans);
         //toggle = toggle + 1;
         //test.setText(Integer.toString(toggle));
         if (ans.getText().toString().length() < 1 && user_ans.getText().toString().length() > 0
-                && num1.getText().toString().length() > 0 && num2.getText().toString().length() > 0){
+                && num1.getText().toString().length() > 0 && num2.getText().toString().length() > 0) {
             onCheckButtonClick(v);
-        }
-        else {
-            onNextButtonClick(v);
-        }
+        } else onNextButtonClick(v);
+    }
 
 
+    public void onActivityChangeClick(View v){
+        Intent i = new Intent(this,SelectTables.class);
+        startActivity(i);
     }
 }
