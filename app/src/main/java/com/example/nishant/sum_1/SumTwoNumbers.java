@@ -39,7 +39,7 @@ public class SumTwoNumbers extends AppCompatActivity {
         TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
         user_ans.setText("");
     }
-
+//test123
     //Click to backspace one character in user input
     public void onDeleteButtonClick(View v){
         TextView user_ans = (TextView)findViewById(R.id.textView_userAns);
